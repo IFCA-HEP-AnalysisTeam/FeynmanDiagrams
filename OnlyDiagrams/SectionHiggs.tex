@@ -1,0 +1,146 @@
+\section{Higgs Backgrounds}
+\label{SectionHiggs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{LO diagrams for Higgs Production} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7mm}
+
+
+% ===============
+% Higgs strahlung: q q' -> W*,Z*-> H W,Z
+% ===============
+\begin{figure}[htb]
+%\subfigure[(a)]{
+\centering
+\begin{fmffile}{qqHWZ}
+\begin{fmfgraph*}(100,80)
+  % # in/out
+  \fmfleft{i1,i2}
+  \fmfright{o1,o2}
+  % ins
+  \fmf{fermion}{v1,i1}
+  \fmf{fermion}{i2,v1}
+  \fmflabel{\(\overline{q}\)}{i1}
+  \fmflabel{\(q'\)}{i2}
+  % mediators
+  \fmf{photon, label= $W^{*};Z^{*}$}{v1,v2}
+  % outs
+  \fmf{photon}{v2,o1}
+  \fmf{dashes}{v2,o2}
+  \fmflabel{\(W;Z\)}{o1}
+  \fmflabel{\(H\)}{o2}
+  \end{fmfgraph*} 
+  \end{fmffile}
+%}
+\vspace{3mm}
+\caption{}
+\label{fig:qqHWZ}
+\end{figure}
+\vspace{7mm}
+
+% =========================
+% Vector boson fusion: W,Z
+% =========================
+\begin{figure}[htb]
+\centering
+\begin{fmffile}{VBFHWZ}
+\begin{fmfgraph*}(100,80)
+  % # in/out
+  \fmfleft{i1,i2}
+  \fmfright{o1,o2,o3}
+  % ins
+  \fmf{fermion}{i1,v1}
+  \fmf{fermion}{i2,v2}
+  \fmflabel{\(q\)}{i1}
+  \fmflabel{\(q'\)}{i2}
+  % mediators
+  \fmf{photon, label= $W ;Z$}{v1,v3}
+  \fmf{photon, label= $W ;Z$ , label.side=left}{v2,v3}
+  % outs
+  \fmf{fermion}{v1,o1}
+  \fmf{dashes}{v3,o2}
+  \fmf{fermion}{v2,o3}
+  %\fmflabel{\(W;Z\)}{o1}
+  \fmflabel{\(H\)}{o2}
+\end{fmfgraph*}
+\end{fmffile}
+%}
+\vspace{3mm}
+\caption{}
+\label{fig:qqVBFH}
+\end{figure}
+\vspace{7mm}
+
+
+% =========================
+%  ttH (\ttbar H)
+% =========================
+\begin{figure}[htb]
+\centering
+\begin{fmffile}{ttH}
+\begin{fmfgraph*}(100,80)
+  % # in/out
+  \fmfleft{i1,i2}
+  \fmfright{o1,o2,o3}
+  % ins
+  \fmf{gluon}{i1,v1}
+  \fmf{gluon}{i2,v2}
+  \fmflabel{\(g\)}{i1}
+  \fmflabel{\(g\)}{i2}
+  % mediators
+  \fmf{plain_arrow, label= $t$}{v1,v3}
+  \fmf{plain_arrow, label= $\overline{t}$}{v3,v2}
+  % outs
+  \fmf{fermion, label=$\overline{t}$}{o1,v1}
+  %\fmflabel{$\overline{t}$}{o1}
+  \fmf{fermion, label=$t$, label.side=left}{v2,o3}
+  %\fmflabel{$t$}{o3}
+  \fmf{dashes}{v3,o2}
+  \fmflabel{\(H\)}{o2}
+\end{fmfgraph*}
+\end{fmffile}
+%}
+\vspace{3mm}
+\caption{}
+\label{fig:ttH}
+\end{figure}
+\vspace{7mm}
+
+
+% =========================
+%  ttH (\ttbar H) v2
+% =========================
+\begin{figure}[htb]
+\centering
+\begin{fmffile}{ggFusion}
+\begin{fmfgraph*}(100,80)
+  % # in/out
+  \fmfleft{i1,i2}
+  \fmfright{o1}
+  % ins
+  \fmf{gluon}{i1,v1}
+  \fmf{gluon}{i2,v2}
+  \fmflabel{\(g\)}{i1}
+  \fmflabel{\(g\)}{i2}
+  % mediators
+  %\fmfpoly{triangle, empty}{v1,v2,v3}
+  %\fmf{phantom}{v1,v2,v3}
+  \fmf{fermion, tension=1/1.5, label= $t$}{v1,v2}
+  \fmf{fermion, tension=1/1.5, label= $t$, label.side=left}{v2,v3}
+  \fmf{fermion, tension=1/1.5, label= $\overline{t}$}{v3,v1}
+  % outs
+  \fmf{dashes}{v3,o1}
+  \fmflabel{\(H\)}{o1}
+\end{fmfgraph*}
+\end{fmffile}
+%}
+\vspace{3mm}
+\caption{}
+\label{fig:ggFusion}
+\end{figure}
+%}
+\vspace{7mm}
+
+

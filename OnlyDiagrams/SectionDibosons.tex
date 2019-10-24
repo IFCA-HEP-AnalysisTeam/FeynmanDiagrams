@@ -1,0 +1,285 @@
+%\chapter{Event Selection and Background Estimation} % Main chapter title
+\section{Diboson}
+\label{SectionDibosons} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{LO diagrams for WW production} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7mm}
+
+\begin{figure}[htb]
+    \centering
+    \begin{fmffile}{WWschannel}
+    \begin{fmfgraph*}(100,80)
+    % # in/out
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}    
+    % ins
+    \fmf{fermion}{i1,v1}
+    \fmf{fermion}{v1,i2}
+    \fmflabel{\(q\)}{i1}
+    \fmflabel{\(\overline{q}'\)}{i2}
+    % mediators    
+    \fmf{photon, label=$Z^0~/~\gamma^*$}{v1,v2}
+    % outs
+    \fmf{photon}{v2,o1}
+    \fmflabel{$W^+$}{o1}
+    \fmf{photon}{v2,o2}
+    \fmflabel{$W^-$}{o2}
+    \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{3mm}
+    \caption{}
+    \label{fig:wwschannel}
+    \end{figure}
+    
+    \vspace{7mm}
+    \begin{figure}[htb]
+    \centering
+    \begin{fmffile}{WWtchannel}
+    \begin{fmfgraph*}(100,80)
+    % # ins/outs
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+    % ins
+    \fmf{plain_arrow}{i1,v1}
+    \fmf{plain_arrow}{v2,i2}
+    \fmflabel{\(q\)}{i1}
+    \fmflabel{\(\overline{q'}\)}{i2}
+    % mediators
+    \fmf{fermion, label=$\overline{q}''$}{v1,v2}
+    % outs
+    \fmf{photon}{o1,v1}
+    \fmflabel{$W^-$}{o1}
+    \fmf{photon}{o2,v2}
+    \fmflabel{$W^+$}{o2}
+    \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{3mm}
+    \caption{}
+    \label{fig:wwtchannel}
+    \end{figure}
+    \vspace{7mm}
+    
+    \begin{figure}[htb]
+    \centering
+    \begin{fmffile}{gg-fusion}
+    \begin{fmfgraph*}(100,80)
+    % # ins/outs
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+    % ins
+    \fmf{gluon}{i1,v1}
+    \fmf{gluon}{i2,v2}
+    \fmflabel{\(g\)}{i1}
+    \fmflabel{\(g\)}{i2}
+    %\fmf{gluon,label=$g$,label.dist=5mm}{i2,v2}
+    % mediators
+    \fmf{plain_arrow, label=$\overline{q}$}{v1,v2}
+    \fmf{plain_arrow, label=$q$, label.side=left}{v3,v1}
+    \fmf{plain_arrow, label=$q$, label.side=left}{v2,v4}
+    \fmf{plain_arrow, label=$\overline{q}'$,label.side=left}{v4,v3}
+    % outs
+    \fmf{photon}{o1,v3}
+    \fmflabel{$W^-$}{o1}
+    \fmf{photon}{o2,v4}
+    \fmflabel{$W^+$}{o2}
+    \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{3mm}
+    \caption{}
+    \label{fig:ggfusion}
+    \end{figure}
+    \vspace{7mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{LO diagrams for WZ production} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{7mm}
+% qq-> WZ
+% ============
+%  s-channel  
+% ============
+\begin{figure}[htb]
+%\subfigure[s-channel]{
+\centering
+\begin{fmffile}{schannel}
+  \begin{fmfgraph*}(100,80)
+    % # in/out
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}    
+    % ins
+    \fmf{fermion}{i1,v1}
+    \fmf{fermion}{v1,i2}
+    \fmflabel{\(q\)}{i1}
+    \fmflabel{\(\overline{q}'\)}{i2}
+    % mediators    
+    \fmf{photon, label= $W^{\pm}$}{v1,v2}
+    % outs
+    \fmf{photon}{v2,o1}
+    \fmflabel{$W^{\pm}$}{o1}
+    \fmf{photon}{v2,o2}
+    \fmflabel{$Z^0$}{o2}
+\end{fmfgraph*}
+\end{fmffile}
+\vspace{3mm}
+%}
+\caption{}
+\label{fig:WZ_schannel}
+\end{figure}
+\vspace{7mm}
+
+% ============
+%  t-channel  
+% ============
+\begin{figure}[htb]
+%\subfigure[t-channel]{
+\centering
+\begin{fmffile}{tchannel}
+  \begin{fmfgraph*}(100,80)
+    % # in/out
+     \fmfbottom{i1,d1,o1}
+    \fmftop{i2,d2,o2}
+    %\fmfleft{i1,i2}
+    %\fmfright{o1,o2}
+    % ins     
+    \fmf{plain_arrow}{i1,v1}
+    \fmf{plain_arrow}{v2,i2}
+    \fmflabel{\(q\)}{i1}
+    \fmflabel{\(\overline{q}'\)}{i2}
+    % mediators
+    \fmf{fermion, label=$q'$, label.side=left, tension=0}{v1,v2}
+    % outs
+    \fmf{photon}{o1,v1}
+    \fmflabel{$W^{\pm}$}{o1}
+    \fmf{photon}{o2,v2}
+    \fmflabel{$Z^0$}{o2}
+   \end{fmfgraph*}
+   %\hspace{2em}
+\end{fmffile}
+\vspace{3mm}
+%}
+\caption{}
+\label{fig:WZ_tchannel}
+\end{figure}
+\vspace{7mm}
+
+% ============
+%  u-channel  
+% ============
+\begin{figure}[htb]
+%\subfigure[u-channel]{
+\centering
+\begin{fmffile}{uchannel}
+  \begin{fmfgraph*}(100,80)
+    %\fmfleft{i1,i2}
+    %\fmfright{o1,o2}
+  
+    % # in/out
+    \fmfstraight
+    \fmfbottom{i1,v1,o1}
+    \fmftop{i2,v2,o2}    
+    % ins
+    \fmf{fermion, tension= 1/1.5}{i1,v1}
+    \fmf{fermion, tension= 1/1.5}{v2,i2}
+    \fmflabel{\(q\)}{i1}
+    \fmflabel{\(\overline{q}'\)}{i2}
+    % mediators    
+    \fmf{fermion, label=$q$, label.side=left, tension=0.2}{v1,v2}
+    % outs
+    \fmf{photon, tension=0.2}{v1,o2}
+    \fmflabel{$W^{\pm}$}{o1}
+    \fmf{photon, tension=0.2}{v2,o1}
+    \fmflabel{$Z^0$}{o2}
+\end{fmfgraph*}
+\end{fmffile}
+\vspace{3mm}
+%}
+\caption{}
+\label{fig:WZ_uchannel}
+\end{figure}
+\vspace{7mm}
+
+% ===============
+%  ZZ-> 2l2nu o ZZ->2l2Q
+% ===============
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{LO diagrams for ZZ Production} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{7mm}
+
+% ===============
+%  qq'-> ZZ
+% ===============
+\begin{figure}[htb]
+\centering
+\begin{fmffile}{qqZZ}
+\begin{fmfgraph*}(100,80)
+    % # ins/outs
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+    % ins
+    \fmf{plain_arrow}{i1,v1}
+    \fmf{plain_arrow}{v2,i2}
+    \fmflabel{\(q\)}{i1}
+    \fmflabel{\(\overline{q}\)}{i2}
+    % mediators
+    \fmf{fermion, label=$q$}{v1,v2}
+    % outs
+    \fmf{photon}{o1,v1}
+    \fmflabel{$Z$}{o1}
+    \fmf{photon}{o2,v2}
+    \fmflabel{$Z$}{o2}
+\end{fmfgraph*}
+\end{fmffile}
+\vspace{3mm}
+%}
+\caption{}
+\label{fig:qqZZ}
+\end{figure}
+\vspace{7mm}
+
+% ===============
+%  gg-> ZZ
+% ===============
+\begin{figure}[htb]
+%\subfigure[(b)]{
+\centering
+   \begin{fmffile}{ggZZ}
+   \begin{fmfgraph*}(100,80)
+    % # ins/outs
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+    % ins
+    \fmf{gluon}{i1,v1}
+    \fmf{gluon}{i2,v2}
+    \fmflabel{\(g\)}{i1}
+    \fmflabel{\(g\)}{i2}
+    %\fmf{gluon,label=$g$,label.dist=5mm}{i2,v2}
+    % mediators
+    \fmf{plain_arrow, label=$q$}{v1,v2}
+    \fmf{plain_arrow, label=$\overline{q}$, label.side=left}{v3,v1}
+    \fmf{plain_arrow, label=$q$, label.side=left}{v2,v4}
+    \fmf{plain_arrow, label=$\overline{q}$,label.side=left}{v4,v3}
+    % outs
+    \fmf{photon}{o1,v3}
+    \fmflabel{$Z$}{o1}
+    \fmf{photon}{o2,v4}
+    \fmflabel{$Z$}{o2}
+    \end{fmfgraph*}
+    \end{fmffile}
+%}
+\vspace{3mm}
+\caption{}
+\label{fig:ggZZ}
+\end{figure}
+\vspace{7mm}
+

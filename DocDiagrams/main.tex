@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{feynmf}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+%\usepackage{subfigure}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[justification=centering]{caption}
+\pgfplotsset{compat=1.15}
+
+\title{SM Feynman Diagrams}
+\author{chazinb}
+\date{June 2019}
+
+
+\begin{document}
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+\setlength{\parskip}{3mm}
+%\usepackage{color}
+
+%----------------------------------------------------------------------------------------
+
+\maketitle
+
+%\include{SectionIntro}
+\clearpage
+%\include{SectionTop}
+\clearpage
+\include{SectionDibosons}
+\clearpage
+%\include{SectionDY}
+\clearpage
+%\include{SectionHiggs}
+\clearpage
+%\include{SectionTriboson}
+\clearpage
+%\include{SectionFakes}
+\clearpage
+%\include{HiggsCouplings}
+
+\end{document}

@@ -1,0 +1,117 @@
+\section{Fakes}
+\label{SectionFakes}
+
+\subsection{W+jets Production}
+
+Two simple LO diagrams for W+jets production
+\vspace{5mm}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[h]{0.45\textwidth}
+    \centering
+    \begin{fmffile}{Wjetsa}
+  \begin{fmfgraph*}(100,100)
+    \fmfstraight
+    \fmfleft{i2,i1}
+    \fmfright{o1,l2,l1}
+    % skeleton
+    \fmf{phantom,tension=1.8}{i1,v1}
+    \fmf{phantom,tension=1.0}{v1,l1}
+    \fmf{phantom,tension=1.8}{v1,v2}
+    \fmf{phantom,tension=1.8}{i2,v2}
+    \fmf{phantom,tension=1.0}{v2,o1}
+    \fmffreeze
+    % W + jets
+    \fmfshift{5 right}{l1,l2}
+    \fmfshift{20 left}{o1}
+    % quarks
+    \fmflabel{$q$}{i1}
+    \fmflabel{$\overline{q}$}{i2}
+    \fmf{fermion}{i1,v1,v2,i2}
+    % W boson
+    \fmf{boson,tension=1.2,label=$W^\pm$,label.side=left}{v1,z}
+    \fmf{gluon}{v2,o1}
+    % leptons
+    \fmflabel{$\ell^\pm$}{l1}
+    \fmflabel{$\nu_\ell/~\overline{\nu}_\ell$}{l2}
+    \fmf{fermion}{l1,z,l2}
+  \end{fmfgraph*}
+\end{fmffile}
+    \vspace{2mm}
+    \caption{W+jets}
+    \label{fig:Wjetsa}
+    \end{subfigure}
+    \begin{subfigure}[h]{0.45\textwidth}
+    \centering
+\begin{fmffile}{Wjetsb}
+ \begin{fmfgraph*}(100,100)
+    \fmfleft{i2,i1}
+    \fmfright{o2,o1}
+    \fmftop{t}
+    \fmf{phantom}{i1,v1,i2}
+    \fmf{phantom}{o1,v2,o2}
+    \fmf{phantom}{v1,v2}
+    \fmffreeze
+    \fmf{fermion}{i1,g}
+    \fmf{plain,tension=2.8}{g,v1}
+    \fmf{fermion}{v1,i2}
+    \fmf{gluon,tension=0}{t,g}
+    \fmf{boson,label=$W^{\pm}$,label.side=right}{v1,v2}
+    \fmf{fermion}{o2,v2,o1}
+    \fmflabel{$q$}{i1}
+    \fmflabel{$\overline{q}$}{i2}
+    \fmflabel{$\ell^\pm$}{o1}
+    \fmflabel{$\nu_\ell/~\overline{\nu}_\ell$}{o2}
+    \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{2mm}
+    \caption{W+jets}
+    \label{fig:Wjetsb}
+    \end{subfigure}
+    \vspace{4mm}
+    \caption{LO diagrams for W+jets production}
+    \label{fig:my_label}
+    % https://wiki.physik.uzh.ch/cms/latex:feynman
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ ttbar semileptonic} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+An example of ttbar decay in semileptonic final states at the LHC collider in Figure~\ref{fig:ttbarsemiLep}
+
+\vspace{5mm}
+
+
+\begin{figure}[ht]
+    \centering
+\begin{fmffile}{tt1l}
+  \begin{fmfgraph*}(180,150)
+    \fmfset{arrow_len}{3.5mm}
+    \fmfstraight
+    \fmfleft{i1,i2,i3,i4,i5}
+    \fmfright{o1,o2,o3,o4,o5,o6}
+    % bW -> bqq
+    \fmf{boson,tension=1.5,label={$W^+$},label.side=right}{v2,v21}  % W boson
+    \fmf{fermion}{v2,o6}     % b quark
+    \fmf{fermion}{o5,v21,o4}
+    % bW -> blnu
+    \fmf{boson,tension=1.5,label={$W^-$},label.side=right}{v1,v11}  % W boson
+    \fmf{fermion}{v1,o3}     % b quark
+    \fmf{fermion}{o1,v11,o2}
+    \fmf{fermion,tension=1.5}{v1,i3,v2}  % top quark pair
+    \fmf{phantom,label={$\overline{t}$},tension=1,label.side=rigth}{i3,v1}
+    \fmf{phantom,label={$t$},tension=1,label.side=left}{i3,v2}
+    \fmflabel{$\overline{\nu}_{\ell}  $}{o1}
+    \fmflabel{$ \ell^-$}{o2}
+    \fmflabel{$\overline{b}$}{o3}
+    \fmflabel{$\overline{q}' $}{o4}
+    \fmflabel{$q $}{o5}
+    \fmflabel{$b$}{o6}
+  \end{fmfgraph*}
+\end{fmffile}
+
+\vspace{2mm}
+    \caption{Decay of a $t\overline{t}$ pair into $b\overline{b}$ pair and $W^{\pm}$ bosons on tree level, including the subsequent leptonic and hadronic $W$ decays with $l$ being e, $\mu$, $\tau$ }
+    \label{fig:ttbarsemiLep}
+\end{figure}

@@ -1,0 +1,150 @@
+\section{Drell-Yan Background} % Main chapter title
+
+\label{SectionDY} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{LO diagrams for Drell-Yan plus jets (Z+jets) production} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+LO production of DY process and Z+jets at the LHC collider in Figure~\ref{fig:DY}
+\vspace{10mm}
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[h]{0.45\textwidth}
+    \centering
+    \begin{fmffile}{DYLO}
+      \begin{fmfgraph*}(100,80)
+      % # ins/outs
+      \fmfleft{i1,i2}
+      \fmfright{o1,o2}
+      % ins
+      \fmf{fermion}{i2,v1}
+      \fmf{fermion}{v1,i1}
+      % mediators
+      \fmf{photon, label=$Z^0/\gamma^*$}{v1,v2}
+      % outs
+      \fmf{fermion}{v2,o2}
+      \fmf{fermion}{o1,v2}
+      % labels
+      \fmflabel{$q$}{i2}
+      \fmflabel{$\overline{q}$}{i1}
+      \fmflabel{$\ell^-$}{o2}
+      \fmflabel{$\ell^+$}{o1}
+      %\fmflabel{$\ell^- /~ q'$}{o2}
+      %\fmflabel{$\ell^+ /~ \overline{q}'$}{o1}
+      \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{2mm}
+    \caption{Drell\emph{-}Yan~}
+    \label{fig:DYLO}
+    \end{subfigure}
+    \vspace{5mm}
+     \begin{subfigure}[h]{0.45\textwidth}
+    \centering
+    \begin{fmffile}{DYLO-tchannel}
+      \begin{fmfgraph*}(100,80)
+       % # ins/outs
+      \fmfstraight
+      \fmftop{i2,v2,o2}
+      \fmfbottom{i1,v1,o1}
+      % ins
+      \fmf{fermion}{i2,v2}
+      \fmf{fermion}{v1,i1}
+      % mediators
+      \fmf{photon, label=$Z^0/\gamma^*$}{v1,v2}
+      % outs
+      \fmf{fermion}{v2,o2}
+      \fmf{fermion}{o1,v1}
+      % labels
+      \fmflabel{$q'$}{i2}
+      \fmflabel{$\overline{q}$}{i1}
+      \fmflabel{$q'$}{o2}
+      \fmflabel{$\overline{q}$}{o1} 
+      \fmfdotn{v}{2}
+      \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{2mm}
+    \caption{$q\overline{q}$ scattering ($t$-channel)}
+    \label{fig:DYLO_tchannel}
+    \end{subfigure}
+    \vspace{5mm}
+    
+    \begin{subfigure}[h]{0.45\textwidth}
+    \centering
+    \begin{fmffile}{DYjets}
+      \begin{fmfgraph*}(100,80)
+      \fmfleft{i2,i1}
+      \fmfright{o2,o1}
+      \fmftop{t}
+      \fmf{phantom}{i1,v1,i2}
+      \fmf{phantom}{o1,v2,o2}
+      \fmf{phantom}{v1,v2}
+      \fmffreeze
+      \fmf{fermion}{i1,g}
+      \fmf{plain,tension=2.8}{g,v1}
+      \fmf{fermion}{v1,i2}
+      \fmf{gluon,tension=0}{t,g}
+      \fmf{boson,label=$Z /\gamma^*$,label.side=right}{v1,v2}
+      \fmf{fermion}{o2,v2,o1}
+      \fmflabel{$q$}{i1}
+      \fmflabel{$q'$}{i2}
+      \fmflabel{$\ell^-$}{o2}
+      \fmflabel{$\ell^+$}{o1}
+      %\fmflabel{$\ell^- /~ q'$}{o2}
+      %\fmflabel{$\ell^+ /~ \overline{q}'$}{o1}
+      \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{2mm}
+    \caption{Drell\emph{-}Yan~+ Jets}
+    \label{fig:DYjets_LO}
+    %https://wiki.physik.uzh.ch/cms/latex:feynman
+    \end{subfigure}
+    \vspace{5mm}
+    \begin{subfigure}[h]{0.45\textwidth}
+    \centering
+    \begin{fmffile}{Z+jets}
+      \begin{fmfgraph*}(100,80)
+      \fmfleft{i2,i1} 
+      \fmfright{o2,o1}
+      \fmf{fermion}{i1,v1}
+      \fmf{fermion}{v2,i2}
+      \fmf{fermion, label=$q$}{v1,v2}
+      \fmf{photon}{v1,o1}
+      \fmf{gluon}{v2,o2}
+      \fmflabel{$q$}{i1}
+      \fmflabel{$\overline{q}$}{i2}
+      \fmflabel{$g$}{o2}
+      \fmflabel{$Z^0$}{o1}
+      \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{2mm}
+    \caption{Z + jets}
+    \label{fig:Z+jets_LO}
+    %https://wiki.physik.uzh.ch/cms/latex:feynman
+    \end{subfigure}
+    
+    \caption{Leading order Feynman diagrams of $Z$ boson production at LHC through Drell-Yan process (up/down-left), the $q\overline{q}$ scattering in the $t$-channel (up-right) and the $q\overline{q}$ annihilation producing a gluon and a $Z$ boson.}
+    \label{fig:DY}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \begin{fmffile}{Zdecays}
+    \begin{fmfgraph*}(100,80)
+    % # ins/out
+    \fmfleft{i1}
+    \fmfright{o1,o2}
+    % mediators
+    \fmf{photon, label=$Z$}{i1,v1}
+    % outs
+    \fmf{fermion}{v1,o1}
+    \fmflabel{$\ell^- / q /\nu $}{o1}
+    \fmf{fermion}{o2,v1}
+    \fmflabel{$\ell^+ / \overline{q} /\overline{\nu} $}{o2}
+    \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{4mm}
+    \caption{The $Z$ boson fermion decays}
+    \label{fig:Zdecays}
+\end{figure}

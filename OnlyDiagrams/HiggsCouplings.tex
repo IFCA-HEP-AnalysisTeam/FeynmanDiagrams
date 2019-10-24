@@ -1,0 +1,107 @@
+%\chapter{Event Selection and Background Estimation} % Main chapter title
+\section{Higgs couplings}
+\label{HiggsCouplings} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Three lowest-order Feynman diagrams for Higgs decay} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7mm}
+
+\begin{figure}[htb]
+    \centering
+    % coupling to fermions
+    \begin{fmffile}{fermions}
+    \begin{fmfgraph*}(90,70)
+    \fmfleft{i1}
+    \fmfright{o1,o2}    
+    \fmf{dashes}{i1,v1}
+    \fmf{fermion}{o1,v1}
+    \fmf{fermion}{v1,o2}
+    \fmflabel{$H$}{i1}
+    \fmflabel{$\overline{f}$}{o1}
+    \fmflabel{$f$}{o2}
+    \fmfdotn{v}{1}
+    \fmflabel{$m_f\frac{g_W}{2m_W}$}{v1}
+    \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{5mm}
+    \caption{}
+    \end{figure}
+\vspace{7mm}
+
+    \begin{figure}[htb]
+    \centering
+     % coupling to W bosons
+    \begin{fmffile}{Wboson}
+    \begin{fmfgraph*}(90,70)
+    \fmfleft{i1}
+    \fmfright{o1,o2}    
+    \fmf{dashes}{i1,v1}
+    \fmf{boson}{o1,v1}
+    \fmf{boson}{v1,o2}
+    \fmflabel{$H$}{i1}
+    \fmflabel{$W^+$}{o1}
+    \fmflabel{$W^-$}{o2}
+    \fmfdotn{v}{1}
+    \fmflabel{$g_W m_W$}{v1}
+    \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{5mm}
+    \caption{}
+    \end{figure}
+\vspace{7mm}  
+
+    \begin{figure}[htb]
+    \centering
+     % coupling to Z bosons
+    \begin{fmffile}{Zboson}
+    \begin{fmfgraph*}(90,70)
+    \fmfleft{i1}
+    \fmfright{o1,o2}    
+    \fmf{dashes}{i1,v1}
+    \fmf{boson}{o1,v1}
+    \fmf{boson}{v1,o2}
+    \fmflabel{$H$}{i1}
+    \fmflabel{$Z^0$}{o1}
+    \fmflabel{$Z^0$}{o2}
+    \fmfdotn{v}{1}
+    \fmflabel{$m_Z\frac{g_W}{cos\theta_W}$}{v1}
+    \end{fmfgraph*}
+    \end{fmffile}
+    \vspace{5mm}
+    \caption{}
+    \end{figure}
+
+\vspace{7mm}
+    \begin{figure}[htb]
+    \centering
+    \begin{fmffile}{feyngraph}
+    \begin{fmfgraph*}(100,80)
+       \fmfleft{i}
+       \fmfright{o}
+       \fmfv{label=H,l.a=60}{i}
+       \fmfv{label=H,l.a=120}{o}
+       \fmf{dashes,tension=1}{i,v1} % ,label=H,label.side=left
+       \fmf{dashes,tension=1}{v2,o}
+       \fmf{fermion,left,tension=0.4,label=$f$}{v1,v2,v1}
+    \end{fmfgraph*}
+    \quad  \quad
+    \begin{fmfgraph*}(100,80)
+       \fmfleft{i}
+       \fmfright{o}
+       \fmftop{m}
+       \fmfv{label=H,l.a=60}{i}
+       \fmfv{label=H,l.a=120}{o}
+       \fmflabel{$S$}{m}
+       \fmf{dashes,tension=1}{i,v1}
+       \fmf{dashes,tension=1}{v1,o}
+       \fmf{dashes,right,tension=0}{v1,m,v1}
+    \end{fmfgraph*}
+    \end{fmffile}
+    \caption{}
+    \end{figure}
+
+
